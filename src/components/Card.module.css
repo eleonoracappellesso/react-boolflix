@@ -1,0 +1,42 @@
+.cardInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Sfondo semi-trasparente per effetto overlay */
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    /* Nascosto inizialmente */
+    transition: opacity 0.5s;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centrare verticalmente */
+    align-items: center;
+    /* Centrare orizzontalmente */
+}
+
+.cardEffect:hover .cardInner {
+    opacity: 1;
+    /* Visibile all'hover */
+}
+
+.cardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    /* Aggiunge un effetto zoom all'immagine */
+}
+
+.flag {
+    width: 70px;
+}
+
+.cardStar {
+    color: gold;
+}
