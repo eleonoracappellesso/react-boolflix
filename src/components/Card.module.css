@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     /* Centrare verticalmente */
-    align-items: center;
+    align-items: flex-start;
     /* Centrare orizzontalmente */
 }
 
@@ -39,4 +39,14 @@
 
 .cardStar {
     color: gold;
+}
+
+.overview {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    max-height: calc(1.5em * 5);
 }

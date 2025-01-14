@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalContext } from '../contexts/GlobalContext';
-//import { fa-star } from "react-icons/fa";
+import { FaStar, FaRegStar } from "react-icons/fa";
 import style from "./Card.module.css";
 
 const flags = ["de", "en", "es", "it", "fr"];
@@ -12,16 +12,16 @@ export default function MovieCards() {
         ? movies.original_language + ".jpg"
         : "placeholder.png";
 
-    const drawStars = () => {
+    const drawStars = (vote_average) => {
         let stars = [];
         for (let i = 1; i <= 5; i++) {
-            const star =
-                i <= Math.ceil(movies.vote_average / 2) ? (
-                    <i className='fa-star' key={i} />
+            stars.push(
+                i <= Math.ceil(vote_average / 2) ? (
+                    <FaStar key={i} />
                 ) : (
-                    <i className='fa-reg-star' key={i} />
-                );
-            stars.push(star);
+                    <FaRegStar key={i} />
+                )
+            );
         }
         return stars;
     };
@@ -41,13 +41,14 @@ export default function MovieCards() {
                                     className={`card-img-top ${style.cardImg}`}
                                 />
                             )}
-                            <div className={style.cardInner}>
-                                <h5>{movie.title}</h5>
-                                <p className='p-2'>{movie.overview}</p>
-                                <div className={style.flag}>
+                            <div className={`p-3 ${style.cardInner}`}>
+                                <p className='my-3'><strong>Titolo:</strong> {movie.title || "Titolo non disponibile"}</p>
+                                <p className={`overview ${style.overview}`}><strong>Overview:</strong> {movie.overview || "Descrizione non disponibile"}</p>
+                                <div className={`my-2 ${style.flag}`}>
                                     <img src={`/img/${flag}`} alt={flag} className="img-fluid" />
                                 </div>
-                                <div className={style.cardStar}>{drawStars()}</div>
+                                <div className={style.cardStar}>{drawStars(movie.vote_average)}</div>
+                                <p><strong>Voto:</strong> {movie.vote_average}</p>
                             </div>
                         </div>
                     </div>
