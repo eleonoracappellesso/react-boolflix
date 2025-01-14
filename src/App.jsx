@@ -7,8 +7,6 @@ import { GlobalContext, GlobalProvider } from "./contexts/GlobalContext";
 import HeaderComponent from "./components/HeaderComponent";
 import MainComponent from "./components/MainComponent";
 
-
-
 function App() {
 
   return (
