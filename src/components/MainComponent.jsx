@@ -1,5 +1,5 @@
-import MovieCards from "./MovieCards"
-import SeriesCards from "./SeriesCards"
+import MovieCards from "./Movies"
+import SeriesCards from "./Series"
 
 export default function MainComponent() {
     return (
