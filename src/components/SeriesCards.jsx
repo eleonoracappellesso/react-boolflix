@@ -33,6 +33,9 @@ export default function SeriesCards() {
                                 />
                             )}
                         </div>
+                        <div className="card-body">
+                            <h5>{serie.title}</h5>
+                        </div>
                     </div>
                 ))
             ) : (

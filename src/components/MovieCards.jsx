@@ -33,6 +33,9 @@ export default function MovieCards() {
                                 />
                             )}
                         </div>
+                        <div className="card-body">
+                            <h5>{movie.title}</h5>
+                        </div>
                     </div>
                 ))
             ) : (

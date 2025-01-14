@@ -1,11 +1,11 @@
-import SearchBarComponent from "./SearchBarComponent"
+import SearchBar from "./SearchBarComponent"
 
 export default function HeaderComponent() {
     return (
         <nav className="navbar myNav">
             <div className="container-fluid">
-                <a className="navbar-brand">Boolflix</a>
-                <SearchBarComponent />
+                <h3>Boolflix</h3>
+                <SearchBar />
             </div>
         </nav>
     )
