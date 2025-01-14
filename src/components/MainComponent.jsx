@@ -3,13 +3,13 @@ import SeriesCards from "./SeriesCards"
 
 export default function MainComponent() {
     return (
-        <main className="container">
+        <main className="container my-3">
             <section>
-                <h2>Movies</h2>
+                <h3>Movies</h3>
                 <MovieCards />
             </section>
             <section className="my-5">
-                <h2>TV Series</h2>
+                <h3>TV Series</h3>
                 <SeriesCards />
             </section>
         </main>
