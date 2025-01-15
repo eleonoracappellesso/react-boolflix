@@ -44,6 +44,11 @@ const GlobalProvider = ({ children }) => {
     const search = (query) => {
         setLoading(true);
 
+        if (!query) {
+            fetchAllData()
+            return
+        }
+
         const movieUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}&language=it_IT`;
         const seriesUrl = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${query}&language=it_IT`;
 

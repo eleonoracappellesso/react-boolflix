@@ -1,24 +1,46 @@
-.myNav {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
     background-color: black;
+    z-index: 3000;
+    border-bottom: 2px solid #555555;
 }
 
-.myNav h1 {
+.navbar h1 {
     color: red;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 3rem;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body {
-    background-color: #555555;
+    background-color: black;
     color: white;
 }
 
 .navButton {
     border-radius: 0;
     margin-left: 0;
+    color: white;
+    background-color: red;
+}
+
+.navButton:hover {
+    background-color: red !important;
 }
 
 .me-2 {
     border-radius: 0;
     margin-right: 0 !important;
+}
+
+main {
+    padding-top: 100px;
 }

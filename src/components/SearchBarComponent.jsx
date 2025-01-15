@@ -28,8 +28,8 @@ export default function SearchBar() {
                 className="form-control me-2"
                 aria-label="Search"
             />
-            <button className="btn btn-danger navButton" type="submit" onClick={handleSearch}>
-                {loading ? "Caricamento..." : "Cerca"}
+            <button className="btn navButton" type="submit" onClick={handleSearch}>
+                Cerca
             </button>
         </form>
     );
