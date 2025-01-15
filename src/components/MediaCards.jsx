@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../contexts/GlobalContext";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -20,25 +21,25 @@ export default function MediaCards({ dataKey, loadingMessage, emptyMessage }) {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: Math.min(data.length, 4),
         slidesToScroll: 1,
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: Math.min(data.length, 3),
                 },
             },
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: Math.min(data.length, 2),
                 },
             },
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: Math.min(data.length, 1),
                 },
             },
         ],
@@ -53,12 +54,20 @@ export default function MediaCards({ dataKey, loadingMessage, emptyMessage }) {
         return <p>{emptyMessage}</p>;
     }
 
+
+    const getColumnClass = () => {
+        if (data.length === 1) return "col-12";  // 1 elemento occupa tutta la riga
+        if (data.length === 2) return "col-6";   // 2 elementi, 50% della riga
+        if (data.length === 3) return "col-4";   // 3 elementi, 33.33% della riga
+        return "col-md-3";                        // Default per 4 o più elementi
+    };
+
     // Renderizza il carosello solo se ci sono dati
     return (
         <div className="row">
             <Slider {...carouselSettings}>
                 {data.map((item) => (
-                    <div key={item.id} className="col-md-3 mb-4">
+                    <div key={item.id} className={getColumnClass()}>
                         <Card
                             item={item}
                             flag={flag(item.original_language)}
