@@ -20,9 +20,9 @@ export default function MediaCards({ dataKey, loadingMessage, emptyMessage }) {
     const carouselSettings = {
         dots: true,
         infinite: false, // Disabilita il loop infinito
-        speed: 500,
+        speed: 800,
         slidesToShow: Math.min(data.length, 4),
-        slidesToScroll: 4, // Evita di scorrere più di un elemento alla volta
+        slidesToScroll: 4,
         responsive: [
             {
                 breakpoint: 1024,
