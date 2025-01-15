@@ -22,24 +22,27 @@ export default function MediaCards({ dataKey, loadingMessage, emptyMessage }) {
         infinite: false, // Disabilita il loop infinito
         speed: 500,
         slidesToShow: Math.min(data.length, 4),
-        slidesToScroll: 1, // Evita di scorrere più di un elemento alla volta
+        slidesToScroll: 4, // Evita di scorrere più di un elemento alla volta
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: Math.min(data.length, 3),
+                    slidesToScroll: 3,
                 },
             },
             {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: Math.min(data.length, 2),
+                    slidesToScroll: 2,
                 },
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: Math.min(data.length, 1),
+                    slidesToScroll: 1,
                 },
             },
         ],
@@ -64,7 +67,7 @@ export default function MediaCards({ dataKey, loadingMessage, emptyMessage }) {
 
     // Renderizza il carosello solo se ci sono dati
     return (
-        <div className="row slider-container">
+        <div className="row">
             <Slider {...carouselSettings}>
                 {data.map((item) => (
                     <div key={item.id} className={getColumnClass()}>

@@ -49,10 +49,3 @@ main {
     margin: 0 10px;
     /* margine tra le cards nello slider */
 }
-
-.slider-container {
-    max-height: 400px;
-    /* Limita l'altezza */
-    overflow: hidden;
-    /* Nascondi eventuali contenuti in eccesso */
-}
