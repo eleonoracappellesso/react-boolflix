@@ -13,7 +13,7 @@ export default function MovieCards() {
     return (
         <div className="row">
             {loading ? (
-                <p>Caricamento...</p>
+                <p>Loading...</p>
             ) : movies.length > 0 ? (
                 movies.map((movie) => (
                     <div key={movie.id} className="col-md-3 mb-4">

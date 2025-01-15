@@ -20,8 +20,7 @@ export default function Card({ item, flag, isMovie = true }) {
         <div className={`card ${style.cardWrapper} ${style.cardEffect}`}>
             {item.poster_path && (
                 <img
-                    src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                    alt={isMovie ? item.title : item.name}
+                    src={item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : '/img/placeholder.png'} alt={isMovie ? item.title : item.name}
                     className={`card-img-top ${style.cardImg}`}
                 />
             )}
