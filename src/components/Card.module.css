@@ -1,3 +1,12 @@
+/* .mycard {
+    width: 200px; */
+/* Larghezza personalizzata */
+/* height: auto; */
+/* Mantieni proporzioni */
+/* margin: 10px; */
+/* Spazio tra le card */
+/* } */
+
 .cardInner {
     position: absolute;
     top: 0;
