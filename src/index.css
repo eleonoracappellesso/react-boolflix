@@ -44,3 +44,7 @@ body {
 main {
     padding-top: 100px;
 }
+
+.slick-slide>div {
+    margin: 0 10px;
+}
